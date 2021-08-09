@@ -19,7 +19,7 @@
   include_once("config_login.php");
   include_once("db.php");
 
-  define("MAX_FAILS","3");
+  define("MAX_FAILS", "3");
 
   if (!isset($_SESSION['fails'])) {
     $_SESSION['fails'] = 0;
@@ -54,21 +54,20 @@
         </div>
       </div>
     <?php
-    }
-    else
-    {  
+    } else {
     ?>
-    <div class="alert alert-danger">
-      <a href="../login.html" class="close" data-dismiss="alert">×</a>
-      <div class="text-center">
-         <h5><strong>¡Error!</strong> Login Invalido.</h5>
-      </div>
+      <div class="alert alert-danger">
+        <a href="../login.html" class="close" data-dismiss="alert">×</a>
+        <div class="text-center">
+          <h5><strong>¡Error!</strong> Login Invalido.</h5>
+        </div>
 
-    </div>
+      </div>
 
 
   <?php
-  }} else {
+    }
+  } else {
     session_start();
     $_SESSION['time'] = date('H:i:s');
     $_SESSION['username'] = $usr;
